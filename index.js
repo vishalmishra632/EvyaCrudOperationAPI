@@ -4,7 +4,9 @@ require('dotenv').config();
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+/*const port = 3000;*/
+
+const port = process.env.PORT || 3000;
 
 // Supabase client setup
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
@@ -14,8 +16,14 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SER
 app.use(express.json());
 
 // CORS configuration
+
+//const corsOptions = {
+//    origin: 'http://localhost:3001', // Replace with your frontend URL
+//    optionsSuccessStatus: 200
+//};
+
 const corsOptions = {
-    origin: 'http://localhost:3001', // Replace with your frontend URL
+    origin: ['http://localhost:3001', 'https://your-frontend-url.vercel.app'],
     optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
