@@ -191,6 +191,9 @@ app.put('/members/:id', async (req, res) => {
 });
 
 
+
+
+
 // Route to delete a member by ID
 app.post('/members/delete', async (req, res) => {
     const { ids } = req.body;
@@ -210,15 +213,12 @@ app.post('/members/delete', async (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.get('/test', (req, res) => {
+    res.json({ message: 'API is working' });
 });
 
 // Start server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
