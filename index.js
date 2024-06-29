@@ -67,8 +67,6 @@ app.get('/members', async (req, res) => {
 });
 
 // Route to get a specific member by ID
-// backend/server.js
-
 app.get('/members/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -86,7 +84,6 @@ app.get('/members/:id', async (req, res) => {
     }
 });
 
-// Route to add a new member
 // Route to add a new member
 app.post('/members', async (req, res) => {
     // Validate and process request body
@@ -184,9 +181,6 @@ app.put('/members/:id', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
-
-
 
 
 // Route to delete a member by ID
