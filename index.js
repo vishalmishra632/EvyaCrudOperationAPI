@@ -23,7 +23,7 @@ app.use(express.json());
 //};
 
 const corsOptions = {
-    origin: ['http://localhost:3001', 'https://evya-crud-operations.vercel.app/'],
+    origin: ['http://localhost:3001', 'https://evya-crud-operations.vercel.app'],
     credentials: true,
     optionsSuccessStatus: 200
 };
